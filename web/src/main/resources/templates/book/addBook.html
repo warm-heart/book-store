@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图书上架</title>
+    <link th:href="@{/css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link th:href="@{/css/home.css}" href="../../static/css/home.css" rel="stylesheet" type="text/css"/>
+    <script th:src="@{/js/jquery-1.10.2.min.js}" src="../../static/js/jquery-1.10.2.min.js"></script>
+    <script th:src="@{/js/bootstrap.min.js}" src="../../static/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+<div class="container">
+
+
+    <h1 class="text-center text-primary">添加图书</h1>
+
+    <form class="form-horizontal" action="/book/addBook" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label for="bookName" class="col-sm-2 control-label">书名</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="bookName" name="bookName" placeholder="请输入图书名">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bookDescription" class="col-sm-2 control-label">描述</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="bookDescription" name="bookDescription" placeholder="请输入图书描述">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bookStock" class="col-sm-2 control-label">库存</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="bookStock" name="bookStock" placeholder="请填写库存">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bookPrice" class="col-sm-2 control-label">价格</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="bookPrice" name="bookPrice" placeholder="请填写价格">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="file" class="col-sm-2 control-label">图片</label>
+            <div class="col-sm-8">
+                <input type="file" class="form-control" id="file" name="file" placeholder="请选择文件">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="categoryName" class="col-sm-2 control-label">类目</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="categoryName" name="categoryName" placeholder="请输入类目">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">添加</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+
+</body>
+</html>

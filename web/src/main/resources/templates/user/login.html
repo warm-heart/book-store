@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link th:href="@{/css/home.css}" href="../../static/css/home.css" rel="stylesheet" type="text/css"/>
+    <script th:src="@{/js/jquery-1.10.2.min.js}" src="../../static/js/jquery-1.10.2.min.js"></script>
+    <script th:src="@{/js/bootstrap.min.js}" src="../../static/js/bootstrap.min.js"></script>
+
+
+    <style type="text/css">
+        body {
+            background: url('/static/images/a.jpg') repeat;
+        }
+
+        #login-box {
+            /*border:1px solid #F00;*/
+            padding: 35px;
+            border-radius: 15px;
+            background: #5bc0de;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="container" id="top">
+    <div class="row" style="margin-top: 280px; ">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" id="login-box">
+            <form th:action="@{/user/login}" method="post">
+
+
+                <div class="form-group ">
+                    <label for="userName">姓名</label>
+                    <input type="text" class="form-control" id="userName" placeholder="请输入用户姓名"
+                           name="userName">
+                </div>
+
+                <div class="form-group ">
+                    <label for="userPassword">密码</label>
+                    <input type="password" class="form-control" id="userPassword"
+                           placeholder="请输入用户密码"
+                           name="userPassword">
+                </div>
+
+                <center>
+                    <button type="submit" class=" btn-info">登陆</button>
+                </center>
+
+
+            </form>
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.dao.UserDao">
+
+
+
+
+    <select id="getAllUser" resultType="com.book.entity.User">
+        select user_name ,user_id,user_address,user_email,user_password,user_phone,create_time
+        from user
+    </select>
+
+
+
+    <update id="UpdateUser" >
+        update user
+        <set>
+            <if test="userPhone!=null">
+              user_phone=#{userPhone},
+            </if>
+
+            <if test="userPassword != null">
+            user_password=#{userPassword}
+            </if>
+
+        </set>
+        WHERE user_id=#{userId}
+    </update>
+
+    <insert id="saveUser" parameterType="com.book.entity.User">
+
+        insert into user(user_id, user_name, user_password, user_address, user_email, user_phone)
+        values (#{userId},#{userName},#{userPassword},#{userAddress},#{userEmail},#{userPhone})
+    </insert>
+
+
+    <select id="findByUserId" resultType="com.book.entity.User">
+
+        select user_id,user_name ,user_address,user_email,user_password,user_phone,create_time
+        from user where user_id=#{userId}
+    </select>
+
+    <select id="findByUserName" resultType="com.book.entity.User">
+
+        select user_id,user_name ,user_address,user_email,user_password,user_phone,create_time
+        from user where user_name=#{userName}
+    </select>
+
+
+    <delete id="deleteByUserId">
+        delete from user where user_id=#{userId}
+    </delete>
+
+
+</mapper>

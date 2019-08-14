@@ -1,0 +1,27 @@
+
+
+/*类选择器*/
+.from{
+    color: chocolate;
+    font-family: 隶书;
+    background-color: chocolate;
+}
+
+/*id选择器*/
+#fa{
+    color: blueviolet;
+    font-family: 隶书;
+    background-color: blueviolet;
+  }
+
+
+.bg {
+    background:url(/static/images/bg.jpg) no-repeat center;
+    background-size:contain;
+}
+
+
+img{
+    width:200px;
+    height:60px
+}

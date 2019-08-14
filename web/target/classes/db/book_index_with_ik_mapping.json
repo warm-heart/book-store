@@ -1,0 +1,40 @@
+  {
+    "settings": {
+      "number_of_replicas": 0
+    },
+    "mappings": {
+      "book": {
+        "dynamic": false,
+        "properties": {
+          "bookId": {
+            "type": "text"
+          },
+          "bookName": {
+            "type": "text",
+            "analyzer": "ik_max_word",
+            "search_analyzer": "ik_max_word"
+          },
+          "bookDescription": {
+            "type": "text",
+            "analyzer": "ik_max_word",
+            "search_analyzer": "ik_max_word"
+          },
+          "bookStock": {
+            "type": "integer"
+          },
+          "bookPrice": {
+            "type": "double"
+          },
+          "categoryName": {
+            "type": "text",
+            "analyzer": "ik_max_word",
+            "search_analyzer": "ik_max_word"
+          },
+          "createTime": {
+            "type": "date",
+            "format": "strict_date_optional_time||epoch_millis"
+          }
+        }
+      }
+    }
+  }

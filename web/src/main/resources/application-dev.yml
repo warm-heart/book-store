@@ -1,0 +1,77 @@
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://127.0.0.1:3306/book?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 1122
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 1
+      max-active: 20
+      min-idle: 1
+      max-wait: 60000
+      name: cooper
+      filters: stat
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+        session-stat-enable: false
+        session-stat-max-count: 1000
+        principal-session-name: admin
+        principal-cookie-name: admin
+        profile-enable: true
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: admin
+        login-password: admin
+#前后端分离配置时间
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+#返回时间戳 前后端都要用时间戳
+    #jackson:
+      #serialization:
+        #write-dates-as-timestamps: true
+
+  thymeleaf:
+    cache: false
+
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.example.redis.entity
+
+#redis配置
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password:
+  timeout: 10000
+  maxIdle: 300
+  maxTotal : 1000
+  maxWaitMillis: 1000
+  minEvictableIdleTimeMillis: 30000
+  numTestsPerEvictionRun: 1024
+  timeBetweenEvictionRunsMillis: 30000
+  testOnBorrow: true
+  testWhileIdle: true
+
+server:
+  port: 8080
+
+logging:
+  level: debug
+
+
+
+
+
+
+
+
