@@ -1,10 +1,6 @@
 package com.book.service.Impl;
 
 
-
-
-
-
 import com.book.dao.UserDao;
 import com.book.entity.User;
 import com.book.enums.UserEnum;
@@ -16,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -42,18 +39,33 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Integer updateUser(User user) {
-        return userDao.UpdateUser(user);
+    @Transactional
+    public boolean updateUser(User user) {
+
+        Integer integer = userDao.UpdateUser(user);
+        if (integer == 1)
+            return true;
+        throw new UserException(UserEnum.USER_UPDATE_FAIL);
     }
 
     @Override
-    public Integer saveUser(User user) {
-        return userDao.saveUser(user);
+    @Transactional
+    public boolean saveUser(User user) {
+        Integer integer = userDao.saveUser(user);
+        if (integer == 1)
+            return true;
+        throw new UserException(UserEnum.USER_SAVE_FAIL);
     }
 
     @Override
     public User findByUserId(String userId) {
-        return userDao.findByUserId(userId);
+
+        User user = userDao.findByUserId(userId);
+        if (user == null) {
+            throw new UserException(UserEnum.USER_NOT_EXIST);
+        }
+        return user;
+
     }
 
     @Override
@@ -66,7 +78,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Integer deleteByUserId(String userId) {
-        return userDao.deleteByUserId(userId);
+    @Transactional
+    public boolean deleteByUserId(String userId) {
+        Integer integer = userDao.deleteByUserId(userId);
+        if (integer == 1)
+            return true;
+        throw new UserException(UserEnum.USER_DELETE_FAIL);
+
     }
 }

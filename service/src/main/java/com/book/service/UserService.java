@@ -17,13 +17,13 @@ public interface UserService {
     public PageInfo<User> getAllUser(Integer pageNum, Integer pageSize);
 
 
-    public Integer updateUser(User user);
+    public boolean updateUser(User user);
 
-    public Integer saveUser(User user);
+    public boolean saveUser(User user);
 
     public User findByUserId(String userId);
 
     public User findByUserName(String userName);
 
-    public Integer deleteByUserId(String userId);
+    public boolean deleteByUserId(String userId);
 }

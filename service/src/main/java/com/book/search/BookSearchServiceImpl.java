@@ -56,7 +56,7 @@ public class BookSearchServiceImpl implements BookSearchService {
             return false;
         }
 
-        if (indexResponse.status() == RestStatus.OK)
+        if (RestStatus.OK == indexResponse.status())
             return true;
         return false;
 
@@ -74,7 +74,7 @@ public class BookSearchServiceImpl implements BookSearchService {
             log.error(e.getMessage());
             return false;
         }
-        if (response.status() == RestStatus.OK)
+        if (RestStatus.OK == response.status())
             return true;
         return false;
 
@@ -92,7 +92,7 @@ public class BookSearchServiceImpl implements BookSearchService {
             return false;
         }
 
-        if (updateResponse.status() == RestStatus.OK)
+        if (RestStatus.OK == updateResponse.status())
             return true;
         return false;
 

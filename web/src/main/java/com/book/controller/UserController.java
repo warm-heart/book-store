@@ -45,27 +45,6 @@ public class UserController {
     }
 
 
-    @RequestMapping("/register")
-    public String register(User user) {
-        user.setUserId(KeyUtils.genUniqueKey());
-        user.setUserPassword(MD5Utils.encode(user.getUserPassword()));
-        log.info("接收到的数据：{}", user);
-        userService.saveUser(user);
-        return "user/login";
-    }
-
-
-    @RequestMapping("/login")
-    public String login(User user, HttpServletRequest request) {
-        User user1 = userService.findByUserName(user.getUserName());
-        if (MD5Utils.matches(user.getUserPassword(), user1.getUserPassword())) {
-            request.getSession().setAttribute("userId", user1.getUserId());
-            return "redirect:/user/list";
-        }
-        return "user/login";
-    }
-
-
     @RequestMapping("/toUpdateUser")
     public ModelAndView ToUpdateUser(String userId) {
         User user = userService.findByUserId(userId);
@@ -82,7 +61,7 @@ public class UserController {
     public String updateUser(User user) {
         log.info("接收到的数据：{}", user);
         userService.updateUser(user);
-        return "redirect:/list";
+        return "index";
     }
 
 
@@ -90,22 +69,8 @@ public class UserController {
     public String deleteUser(String userId) {
         log.info("接收到的数据：{}", userId);
         userService.deleteByUserId(userId);
-        return "redirect:/user/list";
+        return "index";
     }
 
-
-    @GetMapping("/json")
-    @ResponseBody
-    public BookIndexTemplate json() {
-        BookIndexTemplate bookIndexTemplate = new BookIndexTemplate();
-        bookIndexTemplate.setBookId("6");
-        bookIndexTemplate.setBookName("斗罗大陆");
-        bookIndexTemplate.setBookDescription("古典作品");
-        bookIndexTemplate.setBookStock(100);
-        bookIndexTemplate.setBookPrice(79.9);
-        bookIndexTemplate.setCategoryName("小说");
-        bookIndexTemplate.setCreateTime(new Date());
-        return bookIndexTemplate;
-    }
 
 }

@@ -5,12 +5,13 @@ import lombok.Getter;
 
 @Getter
 public enum UserEnum {
-    BOOK_UPDATE_FAIL(0, "更新图书失败"),
-    BOOK_DELETE_FAIL(1, "删除图书失败"),
-    BOOK_SAVE_FAIL(2, "保存图书失败"),
-    USER_NOT_EXIST(3, "用户不存在"),
-    
-    LOGIN_FAIL(25, "登录失败, 登录信息不正确"),;
+    USER_UPDATE_FAIL(0, "更新用户信息失败"),
+    USER_DELETE_FAIL(1, "删除用户信息失败"),
+    USER_SAVE_FAIL(2, "保存用户信息失败"),
+    USER_NOT_EXIST(4, "用户不存在"),
+
+
+    LOGIN_FAIL(5, "登录失败, 登录信息不正确"),;
 
 
     private Integer code;
