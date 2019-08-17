@@ -10,7 +10,6 @@ public enum UserEnum {
     USER_SAVE_FAIL(2, "保存用户信息失败"),
     USER_NOT_EXIST(4, "用户不存在"),
 
-
     LOGIN_FAIL(5, "登录失败, 登录信息不正确"),;
 
 

@@ -4,6 +4,7 @@ package com.book.utils;
 import com.book.entity.User;
 
 import java.text.ParseException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
@@ -29,6 +30,8 @@ public class main {
         Date date1 = DateUtils.DataAddOneWeek(date);
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         System.out.println(df.format(date1));*/
-
+        AtomicInteger integer = new AtomicInteger(1);
+        boolean b=integer.compareAndSet(1,5);
+        System.out.println(b);
     }
 }

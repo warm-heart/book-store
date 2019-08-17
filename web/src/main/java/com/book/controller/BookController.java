@@ -44,8 +44,9 @@ public class BookController {
 
 
     @RequestMapping("/bookSearch")
-    public String searchByCategoryName(Model model,
-                                       @RequestParam(value = "categoryName", required = false) String queryParam) {
+    public String bookSearch(Model model,
+                                       @RequestParam(value = "queryParam", required = false)
+                                               String queryParam) {
         List<BookVo> list = bookService.search(queryParam);
         model.addAttribute("pageInfo", list);
         return "book/SearchList";

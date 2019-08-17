@@ -11,7 +11,7 @@ public enum BookEnum {
     BOOK_SAVE_FAIL(2, "保存图书失败"),
     BOOK_NOT_EXIST(3, "图书不存在"),
     BOOK_CATEGORY_NOT_EXIST(4, "图书类目不存在"),
-    BOOK_SEARCH_NOT_EXIST(5, "图书搜索未找到"),;
+    BOOK_SEARCH_NOT_EXIST(5, "未找到相关图书"),;
 
     private Integer code;
 

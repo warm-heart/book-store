@@ -41,7 +41,7 @@ spring:
   thymeleaf:
     cache: true
     encoding: UTF-8
-    mode: LEGACYHTML5
+    mode: HTML
   servlet:
     multipart:
       resolve-lazily: true

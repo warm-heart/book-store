@@ -5,7 +5,8 @@ import com.book.enums.ResultEnum;
 
 
 /**
- *  控制层通用结构
+ * 控制层通用结构
+ *
  * @author wangqianlong
  * @create 2019-05-01 19:05
  */
@@ -36,11 +37,16 @@ public class ApiResponse<T> {
     }
 
 
-
-
     public static <T> ApiResponse<T> error(Integer code, String msg) {
         ApiResponse<T> apiResponse = new ApiResponse<>();
         apiResponse.setCode(code);
+        apiResponse.setMsg(msg);
+        return apiResponse;
+    }
+
+    public static <T> ApiResponse<T> error(String msg) {
+        ApiResponse<T> apiResponse = new ApiResponse<>();
+        apiResponse.setCode(500);
         apiResponse.setMsg(msg);
         return apiResponse;
     }

@@ -1,17 +1,18 @@
 package com.book.controller;
 
+import com.book.VO.ApiResponse;
+import com.book.VO.ServiceResult;
 import com.book.entity.User;
+import com.book.enums.ResultEnum;
 import com.book.service.ISmsService;
+import com.book.service.LoginService;
 import com.book.service.UserService;
 import com.book.utils.KeyUtils;
 import com.book.utils.MD5Utils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -27,44 +28,40 @@ public class LoginController {
     @Autowired
     private ISmsService smsService;
 
+    @Autowired
+    private LoginService loginService;
+
+
     @PostMapping("/register")
     public String register(User user) {
         user.setUserId(KeyUtils.genUniqueKey());
         user.setUserPassword(MD5Utils.encode(user.getUserPassword()));
         log.info("接收到的数据：{}", user);
         userService.saveUser(user);
-        return "index";
+        return "IndexController";
     }
 
     @GetMapping("getSmsCode")
-    public void getSmsCode(String phone) {
+    @ResponseBody
+    public String getSmsCode(String phone) {
         smsService.sendSms(phone);
+        //TODO API返回格式
+        return "已发送";
     }
 
 
     @PostMapping("/login")
-    public String login(User user,
-                        @RequestParam(value = "phone", required = false) String phone,
-                        @RequestParam(value = "phoneCode", required = false) String phoneCode,
-                        HttpServletRequest request) {
+    @ResponseBody
+    public ApiResponse login(@RequestBody User user,
+                             @RequestParam(value = "phone", required = false) String phone,
+                             @RequestParam(value = "phoneCode", required = false) String phoneCode,
+                             HttpServletRequest request) {
 
-        log.info("进入了{}", user);
-        if (phone == null) {
-            User user1 = userService.findByUserName(user.getUserName());
-            if (MD5Utils.matches(user.getUserPassword(), user1.getUserPassword())) {
-                request.getSession().setAttribute("userId", user1.getUserId());
-                return "index";
-            }
-            return "user/login";
+        ServiceResult serviceResult = loginService.login(user, phone, phoneCode);
+        if (serviceResult.isSuccess()) {
+            return ApiResponse.success(serviceResult.getResult(), ResultEnum.SUCCESS);
         }
-
-        String smsCode = smsService.getSmsCode(phone);
-        if (phoneCode == null) {
-            return "user/login";
-        }
-        if (phoneCode.equals(phoneCode)) {
-            return "index";
-        }
-        return "/user/login";
+        return ApiResponse.error(serviceResult.getMessage());
     }
+
 }

@@ -1,9 +1,8 @@
 package com.book.entity;
 
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
+
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,10 +13,7 @@ import java.util.Date;
  * @create 2019-07-29 14:29
  */
 
-@Getter
-@Setter
-@ToString
-//@Data
+@Data
 public class User implements Serializable {
 
     private static final long serialVersionUID = 6338526705853492368L;

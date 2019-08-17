@@ -2,24 +2,16 @@ package com.book.controller;
 
 
 import com.book.entity.User;
-import com.book.search.BookIndexTemplate;
 import com.book.service.UserService;
-import com.book.utils.KeyUtils;
-import com.book.utils.MD5Utils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
 
 
 /**
@@ -61,7 +53,7 @@ public class UserController {
     public String updateUser(User user) {
         log.info("接收到的数据：{}", user);
         userService.updateUser(user);
-        return "index";
+        return "IndexController";
     }
 
 
@@ -69,7 +61,7 @@ public class UserController {
     public String deleteUser(String userId) {
         log.info("接收到的数据：{}", userId);
         userService.deleteByUserId(userId);
-        return "index";
+        return "IndexController";
     }
 
 

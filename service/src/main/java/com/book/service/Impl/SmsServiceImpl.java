@@ -100,7 +100,7 @@ public class SmsServiceImpl implements ISmsService, InitializingBean {
             redisTemplate.opsForValue().set(gapKey, code);
             redisTemplate.opsForValue().set(SMS_CODE_CONTENT_PREFIX + telephone, code);
 
-            return ServiceResult.of(code);
+            return ServiceResult.success(code);
         } else {
             return new ServiceResult<String>(false, "服务忙，请稍后重试");
         }

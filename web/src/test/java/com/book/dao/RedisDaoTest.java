@@ -1,8 +1,6 @@
 package com.book.dao;
 
 
-
-
 import com.book.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -49,6 +47,7 @@ public class RedisDaoTest extends StartApplicationTests {
         //添加
         redisTemplate.opsForHash().put("spring-boot-hash", "name", "wql");
         redisTemplate.opsForHash().put("spring-boot-hash", "password", "123");
+        System.out.println(redisTemplate.opsForHash().get("spring-boot-hash", "name"));
 
         //删除
         redisTemplate.opsForHash().delete("spring-boot-hash", "name");
