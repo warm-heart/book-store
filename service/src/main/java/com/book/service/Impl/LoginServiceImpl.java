@@ -32,7 +32,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public ServiceResult<String> login(User user, String phone, String phoneCode) {
-        String Token = UUID.randomUUID().toString();
+       /* String Token = UUID.randomUUID().toString();
         //用户名密码登陆
         if (phone == null) {
             if (!StringUtils.isEmpty(user.getUserName())) {
@@ -63,6 +63,7 @@ public class LoginServiceImpl implements LoginService {
             return ServiceResult.success(Token);
         }
         return new ServiceResult<>(false, "登陆失败，请重新登录");
+    }*/
+        return null;
     }
 }
-

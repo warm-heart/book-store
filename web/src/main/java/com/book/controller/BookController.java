@@ -8,6 +8,7 @@ import com.book.service.Impl.BookServiceImpl;
 
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +32,7 @@ public class BookController {
     BookServiceImpl bookService;
 
 
+
     @RequestMapping("/list")
     public String list(Model model,
                        @RequestParam(required = true, defaultValue = "1") int pageNum,
@@ -45,8 +47,8 @@ public class BookController {
 
     @RequestMapping("/bookSearch")
     public String bookSearch(Model model,
-                                       @RequestParam(value = "queryParam", required = false)
-                                               String queryParam) {
+                             @RequestParam(value = "queryParam", required = false)
+                                     String queryParam) {
         List<BookVo> list = bookService.search(queryParam);
         model.addAttribute("pageInfo", list);
         return "book/SearchList";

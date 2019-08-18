@@ -26,21 +26,21 @@ public interface UserDao {
 
 
     /**
-     * 修改用户
+     * 修改用户信息
      * @param user
      * @return
      */
-    public Integer UpdateUser(User user);
+    public Integer updateUser(User user);
 
     /**
-     * 保存用户
+     * 保存用户信息
      * @param user
      * @return
      */
     public Integer saveUser(User user);
 
     /**
-     * 根据用户id查找
+     * 根据用户Id查找
      * @param userId
      * @return
      */
@@ -48,13 +48,22 @@ public interface UserDao {
 
     /**
      * 根据用户姓名查找
-     * @param UserName
+     * @param userName
      * @return
      */
-    public User findByUserName(String UserName);
+
+    public User findByUserName(String userName);
+
 
     /**
-     * 根据id删除
+     * 根据用户电话查找
+     * @param userPhone
+     * @return
+     */
+    public User findByUserPhone(String userPhone);
+
+    /**
+     * 根据Id删除
      * @param userId
      * @return
      */

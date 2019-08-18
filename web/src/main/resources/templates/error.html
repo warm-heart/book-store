@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Error</title>
@@ -7,6 +8,13 @@
 <body>
 <h1>Internal Server Error</h1>
 <h2>Sorry~发生了一些意想不到的问题</h2>
+<div class="common-hint-word">
+    <div th:text="${#dates.format(timestamp,'yyyy-MM-dd HH:mm:ss')}"></div>
+    <div th:text="${messages}"></div>
+    <div th:text="${error}"></div>
+</div>
+
+
 <a href="/">返回首页</a>
 </body>
 </html>

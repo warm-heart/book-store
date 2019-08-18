@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 
-
-
 /**
  * @author wangqianlong
  * @create 2018-09-14 20:00
@@ -26,7 +24,13 @@ public class GlobalExceptionHandle {
         return ApiResponse.error(e.getCode(), e.getMessage());
     }
 
-
+    @ExceptionHandler(Exception.class)
+    @ResponseBody
+    //让http响应不再是200
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponse Exception(Exception e) {
+        return ApiResponse.error(400, e.getMessage());
+    }
 
 
     @ExceptionHandler(UserException.class)
@@ -34,6 +38,14 @@ public class GlobalExceptionHandle {
     //让http响应不再是200
     @ResponseStatus(HttpStatus.OK)
     public ApiResponse UserException(UserException e) {
+        return ApiResponse.error(e.getCode(), e.getMessage());
+    }
+
+    @ExceptionHandler(RoleException.class)
+    @ResponseBody
+    //让http响应不再是200
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponse RoleException(RoleException e) {
         return ApiResponse.error(e.getCode(), e.getMessage());
     }
 

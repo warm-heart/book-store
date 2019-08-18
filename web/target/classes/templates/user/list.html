@@ -109,7 +109,7 @@
                 <td th:text="${user.userPhone}"></td>
                 <!--/*@thymesVar id="userEmail" type="java.lang.String"*/-->
                 <td th:text="${user.userEmail}"></td>
-                <td th:text="${#dates.format(user.createTime,'yyyy-MM-dd HH:mm:ss')}"></td>
+               <!-- <td th:text="${#dates.format(user.createTime,'yyyy-MM-dd HH:mm:ss')}"></td>-->
                 <td><a th:href="@{/user/toUpdateUser(userId=${user.userId})}">update</a></td>
                 <td><a th:href="@{/user/deleteUser(userId=${user.userId})}">deleteUser</a></td>
             </tr>

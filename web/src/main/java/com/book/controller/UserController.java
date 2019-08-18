@@ -7,10 +7,14 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -53,7 +57,7 @@ public class UserController {
     public String updateUser(User user) {
         log.info("接收到的数据：{}", user);
         userService.updateUser(user);
-        return "IndexController";
+        return "user/list";
     }
 
 
@@ -61,7 +65,7 @@ public class UserController {
     public String deleteUser(String userId) {
         log.info("接收到的数据：{}", userId);
         userService.deleteByUserId(userId);
-        return "IndexController";
+        return "user/list";
     }
 
 

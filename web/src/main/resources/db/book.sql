@@ -9,9 +9,9 @@ CREATE TABLE `user` (
 `user_id` varchar (64) NOT NULL comment '用户id',
 `user_name` varchar(64) NOT NULL comment '用户姓名',
 `user_password` varchar(64) NOT NULL comment '用户密码',
-`user_address` varchar(64) NOT NULL comment '用户地址',
-`user_email` varchar (64) Not NULL comment '用户邮箱',
-`user_phone` varchar(64)  Not NULL comment '用户电话',
+`user_address` varchar(64)   comment '用户地址',
+`user_email` varchar (64)   comment '用户邮箱',
+`user_phone` varchar(64)    comment '用户电话',
 `create_time` timestamp NOT NULL default current_timestamp comment '创建时间',
 `update_time` timestamp NOT NULL default current_timestamp on update current_timestamp comment '更新时间',
 PRIMARY KEY (`user_id`)

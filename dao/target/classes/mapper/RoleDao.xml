@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.dao.RoleDao">
+
+    <select id="findRolesByUserId" resultType="com.book.entity.Role">
+        select  role_name ,role_id,user_id
+        from role where user_id=#{userId}
+    </select>
+
+
+    <insert id="saveRole" parameterType="com.book.entity.Role">
+        insert into role(role_name,user_id)
+        values (#{roleName},#{userId})
+    </insert>
+
+</mapper>

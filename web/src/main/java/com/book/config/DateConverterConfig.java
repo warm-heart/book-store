@@ -18,8 +18,6 @@ import java.util.List;
  * 前后端不分离配置
  */
 
-
-
 @Component
 public class DateConverterConfig implements Converter<String, Date> {
     private static final List<String> formarts = new ArrayList<>(4);

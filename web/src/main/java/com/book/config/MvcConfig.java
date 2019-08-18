@@ -1,9 +1,10 @@
 package com.book.config;
 
 
+import org.springframework.boot.web.server.ErrorPage;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.util.StringUtils;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -33,9 +34,17 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("/index");
         registry.addViewController("/user/toRegister").setViewName("user/register");
         registry.addViewController("/user/toLogin").setViewName("user/login");
+        registry.addViewController("/user/toLogin1").setViewName("phoneLogin");
+
 
         //book
         registry.addViewController("/book/toAddBook").setViewName("book/addBook");
     }
+
+
+
+
+
+
 
 }

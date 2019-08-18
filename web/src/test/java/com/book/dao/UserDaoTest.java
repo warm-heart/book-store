@@ -1,7 +1,6 @@
 package com.book.dao;
 
 
-
 import com.book.entity.User;
 import com.book.utils.KeyUtils;
 import com.book.utils.MD5Utils;
@@ -23,8 +22,6 @@ public class UserDaoTest extends StartApplicationTests {
     private UserDao userDao;
 
 
-
-
     @Test
     public void getAllUser() {
         PageHelper.startPage(1, 2);
@@ -40,10 +37,10 @@ public class UserDaoTest extends StartApplicationTests {
         User user = new User();
         user.setUserId(KeyUtils.genUniqueKey());
         user.setUserPassword(MD5Utils.encode("1122"));
-        user.setUserName("cooper");
-        user.setUserAddress("安徽省滁州市");
-        user.setUserEmail("1783725532@qq.com");
-        user.setUserPhone("1999999099");
+        user.setUserName("admin");
+        //user.setUserPhone("18855092143");
+        user.setUserEmail("123@163.com");
+        user.setUserAddress("anhuisheng");
         Assert.assertEquals(new Integer(1), userDao.saveUser(user));
 
     }
@@ -53,7 +50,7 @@ public class UserDaoTest extends StartApplicationTests {
         User user = new User();
         user.setUserPhone("1200000000");
         user.setUserId("1");
-        Integer i= userDao.UpdateUser(user);
+        Integer i = userDao.updateUser(user);
         System.out.println(i);
     }
 
