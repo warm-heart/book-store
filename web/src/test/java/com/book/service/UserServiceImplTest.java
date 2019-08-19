@@ -2,7 +2,6 @@ package com.book.service;
 
 
 import com.book.entity.User;
-import com.book.service.Impl.LoginServiceImpl;
 import com.book.utils.KeyUtils;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class UserServiceImplTest extends StartApplicationTests {
 
     @Autowired
-    private LoginServiceImpl loginService;
-
-    @Autowired
     private UserService userService;
 
 
@@ -28,8 +24,10 @@ public class UserServiceImplTest extends StartApplicationTests {
         user.setUserId(KeyUtils.genUniqueKey());
         user.setUserName("cooper");
         user.setUserPassword("1122");
-        User u= userService.saveUser(user);
+        User u = userService.saveUser(user);
         System.out.println(u);
 
     }
+
+
 }

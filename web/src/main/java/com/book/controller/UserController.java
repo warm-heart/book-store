@@ -11,10 +11,7 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -30,7 +27,7 @@ public class UserController {
     private UserService userService;
 
 
-    @RequestMapping("/list")
+    @GetMapping("/list")
     public String list1(Model model,
                         @RequestParam(required = true, defaultValue = "1") int pageNum,
                         @RequestParam(required = true, defaultValue = "10") int pageSize) {
@@ -41,7 +38,7 @@ public class UserController {
     }
 
 
-    @RequestMapping("/toUpdateUser")
+    @GetMapping("/toUpdateUser")
     public ModelAndView ToUpdateUser(String userId) {
         User user = userService.findByUserId(userId);
         log.info("userId是：{}", userId);
@@ -53,7 +50,7 @@ public class UserController {
     }
 
 
-    @RequestMapping("/updateUser")
+    @PostMapping("/updateUser")
     public String updateUser(User user) {
         log.info("接收到的数据：{}", user);
         userService.updateUser(user);
@@ -61,7 +58,7 @@ public class UserController {
     }
 
 
-    @RequestMapping("/deleteUser")
+    @PostMapping("/deleteUser")
     public String deleteUser(String userId) {
         log.info("接收到的数据：{}", userId);
         userService.deleteByUserId(userId);

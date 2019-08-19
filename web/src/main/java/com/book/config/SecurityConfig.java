@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/login").permitAll() // 用户登录入口
                 // .antMatchers("/").permitAll() // 管理员登录入口
                 .antMatchers("/book/**").hasRole("ADMIN")
-                .antMatchers("/user/**").hasAnyRole("admin", "USER")
+                .antMatchers("/user/**").hasAnyRole("ADMIN", "USER")
                 .and()
                 .formLogin()
                 .loginProcessingUrl("/login") // 配置角色登录处理入口

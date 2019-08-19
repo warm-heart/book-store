@@ -1,14 +1,9 @@
 package com.book.controller;
 
 import com.book.VO.ApiResponse;
-import com.book.VO.ServiceResult;
-import com.book.entity.User;
+import com.book.entity.Role;
 import com.book.enums.ResultEnum;
 import com.book.service.ISmsService;
-import com.book.service.LoginService;
-import com.book.service.UserService;
-import com.book.utils.KeyUtils;
-import com.book.utils.MD5Utils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContext;
@@ -18,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.security.Principal;
+import java.util.Collections;
 
 /**
  * @author wangqianlong
@@ -62,11 +57,4 @@ public class HomeController {
         return context;
     }
 
-
-    @GetMapping(value = "getSessionId")
-    @ResponseBody
-    public ApiResponse getSmsCode(HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        return ApiResponse.success(session.getId(), ResultEnum.SUCCESS);
-    }
 }

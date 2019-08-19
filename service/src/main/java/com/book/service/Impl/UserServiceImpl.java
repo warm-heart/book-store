@@ -81,7 +81,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUserId(String userId) {
-
         User user = userDao.findByUserId(userId);
         if (user == null) {
             throw new UserException(UserEnum.USER_NOT_EXIST);
