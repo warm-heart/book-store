@@ -1,5 +1,6 @@
 package com.book.utils;
 
+import com.book.entity.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -50,7 +51,7 @@ public class JsonUtil {
 	 * @param typeReference
 	 * @return
 	 */
-	public static Object fromJson(String string, TypeReference typeReference) {
+	public static Object fromJson(byte[] string, Class<User> typeReference) {
 		try {
 			return objectMapper.readValue(string, typeReference);
 		} catch (IOException e) {

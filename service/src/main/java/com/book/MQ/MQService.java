@@ -1,12 +1,15 @@
 package com.book.MQ;
 
 
-
+import com.book.constant.MqConsts;
+import com.book.entity.Role;
 import com.book.entity.User;
 
 import com.book.utils.JsonUtil;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.rabbitmq.client.Channel;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.QueueBinding;
@@ -15,6 +18,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -27,26 +31,16 @@ public class MQService {
     private RabbitTemplate rabbitTemplate;
 
     public void send(String json) {
-       // rabbitTemplate.convertAndSend(RabbitMqConfig.DIRECT_EXCHANGE, "bookOrder", json);
+        rabbitTemplate.convertAndSend(MqConsts.BOOK_DIRECT_EXCHANGE, MqConsts.ROUTING_KEY2, json);
     }
 
-   /* @RabbitListener(queues = RabbitMqConfig.DIRECT_QUEUE1)
-    public void receiveTopic1(String message) throws InterruptedException {
-       // Thread.sleep(2000);
-        List<User> users = (List<User>) JsonUtil.fromJson(message, new TypeReference<List<User>>(){});
-        System.out.println("【receiveTopic1监听到消息】" +users);
-    }*/
+    @RabbitListener(queues = MqConsts.DIRECT_QUEUE2)
+    public void receiveTopic1(String json, Channel channel, Message message) throws IOException {
 
-  /*  @RabbitListener(
-            bindings = @QueueBinding(
-                    value = @Queue(value = RabbitMqConfig.DIRECT_QUEUE1,autoDelete = "true",durable = "false"),
-                    exchange = @Exchange(value = RabbitMqConfig.DIRECT_EXCHANGE),
-                    key = "bookOrder"
-            ))
-    public void receiveTopic2(String message) {
-        List<User> users = (List<User>) JsonUtil.fromJson(message, new TypeReference<List<User>>() {
-        });
-        System.out.println("【receiveTopic1监听到消息】" + users);
-    }*/
+        Role role = (Role) JsonUtil.fromJson(json, Role.class);
+        System.out.println(role);
+        System.out.println("【receiveTopic1监听到消息】" + json);
+        //throw new RuntimeException();
+    }
 
 }

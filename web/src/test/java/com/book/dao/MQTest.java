@@ -1,17 +1,16 @@
 package com.book.dao;
 
+import com.alibaba.fastjson.JSON;
+import com.book.MQ.EsMqService;
 import com.book.MQ.MQService;
 
 
+import com.book.entity.Role;
 import com.book.entity.User;
-import com.book.utils.JsonUtil;
 import org.junit.Test;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author wangqianlong
@@ -23,24 +22,21 @@ public class MQTest extends StartApplicationTests {
     RabbitTemplate template;
     @Autowired
     MQService mqService;
+    @Autowired
+    EsMqService esMqService;
 
     @Test
     public void test() throws InterruptedException {
-        AtomicInteger flag = new AtomicInteger(1);
-      //  while (true) {
-            User user = new User();
-            user.setUserId(String.valueOf(flag.incrementAndGet()));
-            user.setUserPassword("123");
-            user.setUserName("cooper");
-            user.setUserEmail("bookOrder");
-            List<User> users = new ArrayList<>(4);
-            users.add(user);
-            users.add(user);
-            users.add(user);
-            users.add(user);
+        for (int i = 0; i < 100; i++) {
+
+
+            Role role = new Role();
+            role.setUserId("1");
+            role.setRoleId(i);
+            role.setRoleName("123");
+            mqService.send(JSON.toJSONString(role));
             Thread.sleep(2000);
-            String json = JsonUtil.toJson(users);
-            mqService.send(json);
-        //}
+        }
     }
+
 }

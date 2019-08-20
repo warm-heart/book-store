@@ -2,51 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab70672-bc77-4d98-a190-f15ef0402566" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reflections_reflections_0_9_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/book/task/SchedulerTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/book/config/Swagger2Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-store.iml" beforeDir="false" afterPath="$PROJECT_DIR$/book-store.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/commons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/commons/commons.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/book/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/book/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/target/classes/com/book/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons/target/classes/com/book/entity/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/dao.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/dao.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/book/service/Impl/LoginServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/book/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/book/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/book/service/LoginService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/classes/com/book/service/Impl/LoginServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/classes/com/book/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/classes/com/book/service/Impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/classes/com/book/service/LoginService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/book/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/book/config/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/book/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/book/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/book/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/book/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/book/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/book/utils/JsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/book/MQ/MQService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/book/MQ/MQService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/classes/com/book/MQ/MQService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/book/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/book/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/book/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/book/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/test/java/com/book/service/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/test/java/com/book/service/UserServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/test/java/com/book/dao/MQTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/test/java/com/book/dao/MQTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/target/classes/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/book/config/MvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/book/config/MvcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/book/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/book/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/book/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/book/controller/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/book/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/book/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/book/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/book/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/test-classes/com/book/service/UserServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/test-classes/com/book/service/UserServiceImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/web/web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/book/controller/HomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/test-classes/com/book/dao/MQTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -92,7 +57,55 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="application-prod.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/application-prod.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="62" column="25" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MQTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/test/java/com/book/dao/MQTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RabbitMqConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/config/RabbitMqConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="71" column="14" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+              <folding>
+                <element signature="e#605#606#0" expanded="true" />
+                <element signature="e#661#662#0" expanded="true" />
+                <element signature="e#708#709#0" expanded="true" />
+                <element signature="e#768#769#0" expanded="true" />
+                <element signature="e#824#825#0" expanded="true" />
+                <element signature="e#896#897#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MQService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/book/MQ/MQService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,15 +132,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service/src/main/java/com/book/service/Impl/BookServiceImpl.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/book/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/commons/src/main/java/com/book/utils/LoginUserUtil.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/security/AuthProvider.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/book/service/Impl/LoginServiceImpl.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/security/AuthFilter.java" />
         <option value="$PROJECT_DIR$/web/src/main/resources/db/book.sql" />
         <option value="$PROJECT_DIR$/web/src/test/java/com/book/dao/BookDaoTest.java" />
-        <option value="$PROJECT_DIR$/commons/src/main/java/com/book/entity/User.java" />
         <option value="$PROJECT_DIR$/dao/src/main/java/com/book/dao/RoleDao.java" />
         <option value="$PROJECT_DIR$/web/src/test/java/com/book/service/LoginServiceImplTest.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/book/service/UserService.java" />
@@ -150,7 +158,6 @@
         <option value="$PROJECT_DIR$/commons/src/main/java/com/book/exception/RoleException.java" />
         <option value="$PROJECT_DIR$/commons/src/main/java/com/book/exception/UserException.java" />
         <option value="$PROJECT_DIR$/commons/src/main/java/com/book/exception/BookException.java" />
-        <option value="$PROJECT_DIR$/web/src/main/resources/application-prod.yml" />
         <option value="$PROJECT_DIR$/web/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/RedisConfig.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/DateConverterConfig.java" />
@@ -169,7 +176,13 @@
         <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/SpringFactoryBean.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/BusinessService.java" />
         <option value="$PROJECT_DIR$/web/src/test/java/com/book/service/UserServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/commons/src/main/java/com/book/entity/BookInfo.java" />
+        <option value="$PROJECT_DIR$/commons/src/main/java/com/book/entity/User.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/book/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/application-prod.yml" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/book/MQ/MQService.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/RabbitMqConfig.java" />
+        <option value="$PROJECT_DIR$/web/src/test/java/com/book/dao/MQTest.java" />
       </list>
     </option>
   </component>
@@ -218,7 +231,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -264,6 +277,26 @@
             <path>
               <item name="store" type="b2602c69:ProjectViewProjectNode" />
               <item name="book-store" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-store" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-store" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -295,6 +328,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="book" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-store" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
+              <item name="MQ" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="store" type="b2602c69:ProjectViewProjectNode" />
@@ -378,11 +421,45 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-store" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-store" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-store" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-store" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -449,11 +526,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.StartApplication">
+  <component name="RunManager" selected="JUnit.MQTest.test">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="BookDaoTest.findAllBookInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MQTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="web" />
       <extension name="coverage">
         <pattern>
@@ -464,8 +541,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.book.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.book.dao.BookDaoTest" />
-      <option name="METHOD_NAME" value="findAllBookInfo" />
+      <option name="MAIN_CLASS_NAME" value="com.book.dao.MQTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -545,29 +622,6 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="UserServiceImplTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="web" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.book.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.book.service" />
-      <option name="MAIN_CLASS_NAME" value="com.book.service.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -620,18 +674,16 @@
     <list>
       <item itemvalue="Spring Boot.StartApplication" />
       <item itemvalue="JUnit.UserDaoTest.addUser" />
-      <item itemvalue="JUnit.BookDaoTest.findAllBookInfo" />
       <item itemvalue="JUnit.UserDaoTest.updateUser" />
       <item itemvalue="JUnit.UserServiceImplTest.test" />
-      <item itemvalue="JUnit.UserServiceImplTest.test1" />
+      <item itemvalue="JUnit.MQTest.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceImplTest.test1" />
+        <item itemvalue="JUnit.MQTest.test" />
         <item itemvalue="JUnit.UserServiceImplTest.test" />
         <item itemvalue="JUnit.UserDaoTest.addUser" />
         <item itemvalue="JUnit.UserDaoTest.updateUser" />
-        <item itemvalue="JUnit.BookDaoTest.findAllBookInfo" />
       </list>
     </recent_temporary>
   </component>
@@ -685,44 +737,45 @@
       <workItem from="1566180879775" duration="301000" />
       <workItem from="1566181203509" duration="49000" />
       <workItem from="1566181268872" duration="12620000" />
-      <workItem from="1566207587275" duration="296000" />
+      <workItem from="1566207587275" duration="1684000" />
+      <workItem from="1566261001802" duration="10359000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LoginServiceImplTest_test - 2019.08.17 at 16h 49m 44s.xml">
-      <configuration name="LoginServiceImplTest.test" configurationId="JUnit" />
+    <history-entry file="MQTest_test - 2019.08.20 at 10h 46m 47s.xml">
+      <configuration name="MQTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginServiceImplTest_test - 2019.08.17 at 16h 51m 51s.xml">
-      <configuration name="LoginServiceImplTest.test" configurationId="JUnit" />
+    <history-entry file="MQTest_test - 2019.08.20 at 10h 47m 41s.xml">
+      <configuration name="MQTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginServiceImplTest_test - 2019.08.17 at 16h 56m 19s.xml">
-      <configuration name="LoginServiceImplTest.test" configurationId="JUnit" />
+    <history-entry file="MQTest_test - 2019.08.20 at 10h 48m 46s.xml">
+      <configuration name="MQTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginServiceImplTest_test - 2019.08.17 at 17h 04m 03s.xml">
-      <configuration name="LoginServiceImplTest.test" configurationId="JUnit" />
+    <history-entry file="MQTest_test - 2019.08.20 at 10h 49m 38s.xml">
+      <configuration name="MQTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_addUser - 2019.08.17 at 17h 07m 09s.xml">
-      <configuration name="UserDaoTest.addUser" configurationId="JUnit" />
+    <history-entry file="MQTest_test - 2019.08.20 at 10h 50m 36s.xml">
+      <configuration name="MQTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImplTest_test - 2019.08.17 at 18h 01m 32s.xml">
-      <configuration name="UserServiceImplTest.test" configurationId="JUnit" />
+    <history-entry file="MQTest_test - 2019.08.20 at 10h 53m 54s.xml">
+      <configuration name="MQTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImplTest_test - 2019.08.17 at 18h 03m 09s.xml">
-      <configuration name="UserServiceImplTest.test" configurationId="JUnit" />
+    <history-entry file="MQTest_test - 2019.08.20 at 10h 55m 08s.xml">
+      <configuration name="MQTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImplTest_test1 - 2019.08.19 at 15h 16m 15s.xml">
-      <configuration name="UserServiceImplTest.test1" configurationId="JUnit" />
+    <history-entry file="MQTest_test - 2019.08.20 at 10h 55m 58s.xml">
+      <configuration name="MQTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImplTest_test1 - 2019.08.19 at 15h 17m 08s.xml">
-      <configuration name="UserServiceImplTest.test1" configurationId="JUnit" />
+    <history-entry file="MQTest_test - 2019.08.20 at 11h 18m 04s.xml">
+      <configuration name="MQTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImplTest_test1 - 2019.08.19 at 15h 19m 38s.xml">
-      <configuration name="UserServiceImplTest.test1" configurationId="JUnit" />
+    <history-entry file="MQTest_test - 2019.08.20 at 11h 20m 12s.xml">
+      <configuration name="MQTest.test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109028000" />
+    <option name="totallyTimeSpent" value="120775000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -734,10 +787,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.3289256" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50075644" side_tool="true" weight="0.339934" />
       <window_info anchor="right" id="Maven Projects" order="2" weight="0.3290469" />
@@ -751,15 +805,16 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3983471" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
       <window_info id="DB Browser" order="2" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32561985" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" weight="0.32838285" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.29917356" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.31735536" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32838285" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32838285" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49744898" visible="true" weight="0.31467474" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49744898" visible="true" weight="0.3192133" />
       <window_info anchor="right" id="Bean Validation" order="8" weight="0.32980332" />
       <window_info id="Web" order="2" sideWeight="0.502551" side_tool="true" weight="0.28517398" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -768,7 +823,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="9" sideWeight="0.49924356" weight="0.32561985" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32561985" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32561985" />
@@ -782,7 +836,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -790,77 +844,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/security/AuthProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/user/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.6.RELEASE/spring-security-core-5.1.6.RELEASE-sources.jar!/org/springframework/security/core/userdetails/UserDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-405">
-          <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.6.RELEASE/spring-security-core-5.1.6.RELEASE-sources.jar!/org/springframework/security/core/Authentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="100" column="11" selection-start-line="100" selection-start-column="11" selection-end-line="100" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commons/src/main/java/com/book/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commons/src/main/java/com/book/exception/RoleException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="32" selection-start-line="32" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commons/src/main/java/com/book/exception/UserException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commons/src/main/java/com/book/exception/GlobalExceptionHandle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="48" column="62" lean-forward="true" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commons/src/main/java/com/book/exception/BookException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/book/service/Impl/LoginServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/dao/src/main/resources/mapper/UserDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/book/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -872,13 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="2399" column="29" lean-forward="true" selection-start-line="2399" selection-start-column="29" selection-end-line="2399" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/config/RabbitMqConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -942,13 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="33" column="54" lean-forward="true" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/application-prod.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="72" column="16" lean-forward="true" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1124,10 +1093,132 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/config/BusinessService.java" />
+    <entry file="file://$PROJECT_DIR$/commons/src/main/java/com/book/entity/BookInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-rabbit/2.1.8.RELEASE/spring-rabbit-2.1.8.RELEASE.jar!/org/springframework/amqp/rabbit/core/RabbitTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="202" column="16" selection-start-line="202" selection-start-column="16" selection-end-line="202" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons/src/main/java/com/book/constant/MqConsts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-amqp/2.1.8.RELEASE/spring-amqp-2.1.8.RELEASE.jar!/org/springframework/amqp/core/Message.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-amqp/2.1.8.RELEASE/spring-amqp-2.1.8.RELEASE-sources.jar!/org/springframework/amqp/core/MessageDeliveryMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-amqp/2.1.8.RELEASE/spring-amqp-2.1.8.RELEASE-sources.jar!/org/springframework/amqp/core/MessageProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="122" column="33" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
+          <folding>
+            <element signature="e#6935#6936#0" expanded="true" />
+            <element signature="e#6974#6975#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-amqp/2.1.8.RELEASE/spring-amqp-2.1.8.RELEASE-sources.jar!/org/springframework/amqp/core/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons/src/main/java/com/book/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+          <folding>
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="e#1120#1121#0" expanded="true" />
+            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="e#1209#1210#0" expanded="true" />
+            <element signature="e#1236#1237#0" expanded="true" />
+            <element signature="e#1284#1285#0" expanded="true" />
+            <element signature="e#1311#1312#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/book/MQ/EsMqService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="58" column="4" lean-forward="true" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+        <state relative-caret-position="-85">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/application-prod.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="62" column="25" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/book/MQ/MQService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/config/RabbitMqConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="71" column="14" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+          <folding>
+            <element signature="e#605#606#0" expanded="true" />
+            <element signature="e#661#662#0" expanded="true" />
+            <element signature="e#708#709#0" expanded="true" />
+            <element signature="e#768#769#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/test/java/com/book/dao/MQTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

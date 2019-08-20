@@ -28,7 +28,7 @@ spring:
         login-username: admin
         login-password: admin
 
-#前后端分离配置时间
+#前后端分离配置 时间
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
@@ -37,6 +37,7 @@ spring:
     #jackson:
       #serialization:
         #write-dates-as-timestamps: true
+
 #thymeleaf配置
   thymeleaf:
     cache: true
@@ -54,8 +55,16 @@ spring:
     username: guest
     publisher-confirms: true
     publisher-returns: true
-
-
+     #消息重试ack 重试两次
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 2
+          #开启手动ack
+#        acknowledge-mode: manual
+#      direct:
+#        acknowledge-mode: manual
 
 
 #mybatis配置
