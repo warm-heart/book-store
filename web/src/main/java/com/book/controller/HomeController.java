@@ -58,6 +58,4 @@ public class HomeController {
 //        System.out.println(user);
         return context;
     }
-
-
 }

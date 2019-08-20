@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab70672-bc77-4d98-a190-f15ef0402566" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/book/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/book/utils/JsonUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/book/MQ/MQService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/book/MQ/MQService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/classes/com/book/MQ/MQService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/book/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/book/config/MvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/book/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/book/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/test/java/com/book/dao/MQTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/test/java/com/book/dao/MQTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/book/controller/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/test-classes/com/book/dao/MQTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/book/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/book/controller/HomeController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -58,20 +51,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application-prod.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/application-prod.yml">
+      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/controller/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="62" column="25" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="25" />
+            <state relative-caret-position="26">
+              <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MQTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/src/test/java/com/book/dao/MQTest.java">
+      <file leaf-file-name="MvcConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/config/MvcConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+            <state relative-caret-position="278">
+              <caret line="48" column="54" lean-forward="true" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,28 +72,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RabbitMqConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/config/RabbitMqConfig.java">
+      <file leaf-file-name="MQTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/test/java/com/book/dao/MQTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="71" column="14" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+            <state relative-caret-position="302">
+              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
               <folding>
-                <element signature="e#605#606#0" expanded="true" />
-                <element signature="e#661#662#0" expanded="true" />
-                <element signature="e#708#709#0" expanded="true" />
-                <element signature="e#768#769#0" expanded="true" />
-                <element signature="e#824#825#0" expanded="true" />
-                <element signature="e#896#897#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MQService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/book/MQ/MQService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -172,17 +151,17 @@
         <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/commons/src/main/java/com/book/entity/Role.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/IOCConfid.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/MvcConfig.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/SpringFactoryBean.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/BusinessService.java" />
         <option value="$PROJECT_DIR$/web/src/test/java/com/book/service/UserServiceImplTest.java" />
         <option value="$PROJECT_DIR$/commons/src/main/java/com/book/entity/BookInfo.java" />
         <option value="$PROJECT_DIR$/commons/src/main/java/com/book/entity/User.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/book/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/web/src/main/resources/application-prod.yml" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/book/MQ/MQService.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/RabbitMqConfig.java" />
         <option value="$PROJECT_DIR$/web/src/test/java/com/book/dao/MQTest.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/book/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/book/config/MvcConfig.java" />
       </list>
     </option>
   </component>
@@ -526,7 +505,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MQTest.test">
+  <component name="RunManager" selected="Spring Boot.StartApplication">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -738,7 +717,7 @@
       <workItem from="1566181203509" duration="49000" />
       <workItem from="1566181268872" duration="12620000" />
       <workItem from="1566207587275" duration="1684000" />
-      <workItem from="1566261001802" duration="10359000" />
+      <workItem from="1566261001802" duration="12710000" />
     </task>
     <servers />
   </component>
@@ -775,7 +754,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120775000" />
+    <option name="totallyTimeSpent" value="123126000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -844,27 +823,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/book/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Collections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="2399" column="29" lean-forward="true" selection-start-line="2399" selection-start-column="29" selection-end-line="2399" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.10.RELEASE/spring-data-redis-2.1.10.RELEASE.jar!/org/springframework/data/redis/connection/jedis/JedisConnectionFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-data-redis/2.1.7.RELEASE/spring-boot-starter-data-redis-2.1.7.RELEASE.pom">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1067,16 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/config/MvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.1.9.RELEASE/spring-beans-5.1.9.RELEASE.jar!/org/springframework/beans/factory/annotation/Qualifier.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1176,20 +1124,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/application-prod.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="62" column="25" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/book/MQ/MQService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -1212,10 +1146,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/application-prod.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/security/AuthProvider.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.9.RELEASE/spring-webmvc-5.1.9.RELEASE.jar!/org/springframework/web/servlet/config/annotation/CorsRegistration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="16" column="78" selection-start-line="16" selection-start-column="78" selection-end-line="16" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/web/bind/annotation/CrossOrigin.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/test/java/com/book/dao/MQTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="302">
           <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/book/config/MvcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="48" column="54" lean-forward="true" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
