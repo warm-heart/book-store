@@ -1,9 +1,15 @@
 package com.book.config;
 
 
-
-
 import com.book.constant.MqConsts;
+import com.book.entity.Role;
+import com.book.utils.JsonUtil;
+import com.fasterxml.jackson.core.type.TypeReference;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.amqp.core.*;
@@ -13,7 +19,44 @@ import org.springframework.amqp.core.*;
  * @create 2019-08-09 17:43
  */
 @Configuration
+@Slf4j
 public class RabbitMqConfig {
+
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
+
+    @Bean
+    public RabbitTemplate rabbitTemplate(CachingConnectionFactory connectionFactory) {
+        RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
+
+
+        // 消息是否成功发送到Exchange
+        rabbitTemplate.setConfirmCallback((correlationData, ack, cause) -> {
+            if (ack) {
+                String msgId = correlationData.getId();
+
+                //TODO  更改消息数据库中的消息标记状态为已发送
+                log.info("消息成功发送到Exchange correlationDataID {}", msgId);
+            } else {
+                //TODO  更改消息数据库中的消息标记状态为发送失败，定时任务稍后重新发送
+                log.info("消息发送到Exchange失败, {}, cause: {}", correlationData, cause);
+            }
+        });
+
+        // 触发setReturnCallback回调必须设置mandatory=true, 否则Exchange没有找到Queue就会丢弃掉消息, 而不会触发回调
+        rabbitTemplate.setMandatory(true);
+        // 消息是否从Exchange路由到Queue, 注意: 这是一个失败回调, 只有消息从Exchange路由到Queue失败才会回调这个方法
+        rabbitTemplate.setReturnCallback((message, replyCode, replyText, exchange, routingKey) -> {
+            Role role = (Role) JsonUtil.fromJson(message.getBody(), new TypeReference<Role>() {
+            });
+            //TODO 更改消息数据库中的消息标记状态
+            log.info("消息从Exchange路由到Queue失败: exchange: {}, route: {}, replyCode: {}, replyText: {}, message: {} ,role:{}", exchange, routingKey, replyCode, replyText, message, role);
+        });
+
+        return rabbitTemplate;
+    }
 
 
     /**

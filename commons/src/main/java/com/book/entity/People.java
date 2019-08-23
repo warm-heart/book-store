@@ -3,6 +3,7 @@ package com.book.entity;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.Hashtable;
 
 /**
  * @author wangqianlong

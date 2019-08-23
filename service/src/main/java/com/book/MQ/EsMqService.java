@@ -8,13 +8,16 @@ import com.book.search.BookSearchService;
 import com.book.service.BookService;
 import com.book.utils.JsonUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.io.IOException;
+
 
 /**
  * @author wangqianlong
@@ -33,11 +36,19 @@ public class EsMqService {
     }
 
     @RabbitListener(queues = MqConsts.ES_ADD_BOOK_QUEUE)
-    public void receiveTopic1(String message) {
+    public void EsAddBookReceiver(String json, Channel channel, Message message) throws IOException {
+        try {
+            //TODO 判断消息是否被消费如果被消费则直接ACK  消息幂等性处理 手动ACK为了流量削峰
+            BookIndexTemplate bookIndexTemplate = (BookIndexTemplate) JsonUtil.fromJson(json, BookIndexTemplate.class);
+            log.info("【ES_ADD_BOOK_QUEUE接收到消息】 {}", bookIndexTemplate);
+            bookSearchService.add(bookIndexTemplate);
+            //TODO 消费消息成功 更改消息标记状态为已消费
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+        } catch (Exception e) {
+            //TODO 消费消费失败 更改消息标记和重试次数 等待分布式定时任务重新发布消息
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+        }
 
-        BookIndexTemplate bookIndexTemplate = (BookIndexTemplate) JsonUtil.fromJson(message, BookIndexTemplate.class);
-        log.info("【ES_ADD_BOOK_QUEUE接收到消息】 {}", bookIndexTemplate);
-        bookSearchService.add(bookIndexTemplate);
     }
 
 }

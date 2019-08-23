@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -68,7 +69,14 @@ public class UserDaoTest extends StartApplicationTests {
 
 
     @Test
+    @Transactional
     public void getUser() {
-        log.info("输出的list {}" + userDao.findByUserId("1564622975469665420"));
+        log.info("输出的list {}" + userDao.findByUserId("1566036188458575655"));
+        User user = userDao.findByUserId("1566036188458575655");
+        System.out.println(user);
+        user.setUserName("dadjsaof");
+        User user1 = userDao.findByUserId("1566036188458575655");
+        System.out.println(user==user1);
+        System.out.println(user1);
     }
 }

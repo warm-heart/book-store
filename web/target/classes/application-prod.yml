@@ -55,16 +55,24 @@ spring:
     username: guest
     publisher-confirms: true
     publisher-returns: true
-     #消息重试ack 重试两次
+     #消费端开启手动ack
     listener:
       simple:
-        retry:
-          enabled: true
-          max-attempts: 2
-          #开启手动ack
-#        acknowledge-mode: manual
+        acknowledge-mode: manual
+        concurrency: 5
+        max-concurrency: 10
+
 #      direct:
 #        acknowledge-mode: manual
+
+     #消息重试ack 重试两次
+#    listener:
+#      simple:
+#        retry:
+#          enabled: true
+#          max-attempts: 2
+
+
 
 
 #mybatis配置
@@ -72,6 +80,7 @@ mybatis:
   mapper-locations: classpath:/mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
+    local-cache-scope: statement
   type-aliases-package: com.book.entity
 
 #redis配置

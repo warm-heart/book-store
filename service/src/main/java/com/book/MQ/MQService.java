@@ -35,12 +35,16 @@ public class MQService {
     }
 
     @RabbitListener(queues = MqConsts.DIRECT_QUEUE2)
-    public void receiveTopic1(String json, Channel channel, Message message) throws IOException {
+    public void receiveTopic1(Channel channel, Message message) throws IOException {
+        Role role = (Role) JsonUtil.fromJson(message.getBody(), new TypeReference<Role>() {
+        });
 
-        Role role = (Role) JsonUtil.fromJson(json, Role.class);
         System.out.println(role);
-        System.out.println("【receiveTopic1监听到消息】" + json);
-        //throw new RuntimeException();
+        System.out.println("【receiveTopic1监听到消息】" + message);
+        System.out.println(message.getMessageProperties().getHeaders().get("spring_returned_message_correlation"));
+
+        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+
     }
 
 }
