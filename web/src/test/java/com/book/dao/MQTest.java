@@ -40,20 +40,21 @@ public class MQTest extends StartApplicationTests {
         role.setRoleName("123");
 
 
-        rabbitTemplate.convertAndSend(MqConsts.BOOK_DIRECT_EXCHANGE, MqConsts.ROUTING_KEY2,
-                JsonUtil.toJson(role), new CorrelationData("1213eq13"));
+       /* rabbitTemplate.convertAndSend(MqConsts.BOOK_DIRECT_EXCHANGE, MqConsts.ROUTING_KEY2,
+                JsonUtil.toJson(role), new CorrelationData("1213eq13"));*/
 
 
-       /* MessageProperties messageProperties = new MessageProperties();
+        MessageProperties messageProperties = new MessageProperties();
         messageProperties.getHeaders().put("desc", "信息描述");
         messageProperties.getHeaders().put("type", "自定义消息类型");
-        messageProperties.setCorrelationId("123456789");
-        messageProperties.setDeliveryTag(1234567);
+
+        messageProperties.setMessageId("数据库主键ID123456");
+
+        //设置消息过期时间
+        messageProperties.setExpiration("1000000");
         Message message = new Message(JsonUtil.toJson(role).getBytes(), messageProperties);
         rabbitTemplate.convertAndSend(MqConsts.BOOK_DIRECT_EXCHANGE, MqConsts.ROUTING_KEY2,
-                message,new CorrelationData("123445"));
-*/
-
+                message, new CorrelationData("数据库主键ID123456"));
     }
 
 }

@@ -2,12 +2,9 @@ package com.book.MQ;
 
 
 import com.book.constant.MqConsts;
-import com.book.entity.User;
 import com.book.search.BookIndexTemplate;
 import com.book.search.BookSearchService;
-import com.book.service.BookService;
 import com.book.utils.JsonUtil;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;

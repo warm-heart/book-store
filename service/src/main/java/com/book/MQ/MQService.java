@@ -9,10 +9,11 @@ import com.book.utils.JsonUtil;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.rabbitmq.client.Channel;
+
 import org.springframework.amqp.core.Message;
-import org.springframework.amqp.rabbit.annotation.Exchange;
-import org.springframework.amqp.rabbit.annotation.Queue;
-import org.springframework.amqp.rabbit.annotation.QueueBinding;
+import org.springframework.amqp.support.AmqpHeaders;
+
+
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,15 +36,27 @@ public class MQService {
     }
 
     @RabbitListener(queues = MqConsts.DIRECT_QUEUE2)
-    public void receiveTopic1(Channel channel, Message message) throws IOException {
-        Role role = (Role) JsonUtil.fromJson(message.getBody(), new TypeReference<Role>() {
-        });
+    public void receiveTopic1(Channel channel, Message message) throws IOException, InterruptedException {
+        try {
 
-        System.out.println(role);
-        System.out.println("【receiveTopic1监听到消息】" + message);
-        System.out.println(message.getMessageProperties().getHeaders().get("spring_returned_message_correlation"));
 
-        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+            Role role = (Role) JsonUtil.fromJson((byte[]) message.getBody(), new TypeReference<Role>() {
+            });
+
+            System.out.println("【MQService接收消息转化为实体类】" + role);
+            System.out.println("【receiveTopic1监听到消息】" + message);
+            System.out.println("【消息Id是】" + message.getMessageProperties().getMessageId());
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+
+
+            //System.out.println("消息Id是：" + message.getHeaders().get(AmqpHeaders.MESSAGE_ID));
+            // channel.basicAck((Long) message.getHeaders().get(AmqpHeaders.DELIVERY_TAG), false);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            //channel.basicAck((Long) message.getHeaders().get(AmqpHeaders.DELIVERY_TAG), false);
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+        }
 
     }
 
