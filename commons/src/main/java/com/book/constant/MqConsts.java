@@ -12,10 +12,15 @@ public class MqConsts {
     //交换机
     public static final String BOOK_DIRECT_EXCHANGE = "BookDirectExchange";
 
+    public static final String DEAD_DIRECT_EXCHANGE = "my.dead.exchange";
+
+
     //队列
     public static final String BOOK_ORDER_QUEUE = "BookOrderQueue";
     public static final String DIRECT_QUEUE2 = "direct.queue2";
     public static final String ES_ADD_BOOK_QUEUE = "EsAddBookQueue";
+
+    public static final String DEAD_QUEUE = "my.dead.queue";
 
 
     //routing key
@@ -23,7 +28,7 @@ public class MqConsts {
     public static final String ROUTING_KEY2 = "routingKey2";
     public static final String BOOK_ORDER_ROUTING_KEY = "bookOrder";
 
-
+    public static final String DEAD_ROUTING_KEY = "my-dead-routing-key";
 
 
 //    topic

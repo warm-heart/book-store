@@ -51,7 +51,7 @@ public class MQTest extends StartApplicationTests {
         messageProperties.setMessageId("数据库主键ID123456");
 
         //设置消息过期时间
-        messageProperties.setExpiration("1000000");
+        messageProperties.setExpiration("10000");
         Message message = new Message(JsonUtil.toJson(role).getBytes(), messageProperties);
         rabbitTemplate.convertAndSend(MqConsts.BOOK_DIRECT_EXCHANGE, MqConsts.ROUTING_KEY2,
                 message, new CorrelationData("数据库主键ID123456"));

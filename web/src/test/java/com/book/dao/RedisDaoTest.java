@@ -10,6 +10,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -28,14 +29,16 @@ public class RedisDaoTest extends StartApplicationTests {
      */
     @Test
     public void String() {
-        log.info("开始测试");
-        User user = new User();
-        user.setUserName("cooper");
-        user.setUserPassword("密码");
-        redisTemplate.opsForValue().set("a", user);
-        redisTemplate.opsForValue().set("b", user);
-        //redisTemplate.opsForValue().set("testt", "test",180,TimeUnit.SECONDS);
-        log.info("取出数据的数据为 {}", redisTemplate.opsForValue().get("a"));
+//        log.info("开始测试");
+//        User user = new User();
+//        user.setUserName("cooper");
+//        user.setUserPassword("密码");
+//        redisTemplate.opsForValue().set("a", user);
+//        redisTemplate.opsForValue().set("b", user);
+//        //redisTemplate.opsForValue().set("testt", "test",180,TimeUnit.SECONDS);
+//        log.info("取出数据的数据为 {}", redisTemplate.opsForValue().get("a"));
+
+
 
     }
 

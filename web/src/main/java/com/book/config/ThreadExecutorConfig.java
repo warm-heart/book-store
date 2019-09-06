@@ -18,7 +18,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Slf4j
 public class ThreadExecutorConfig {
     private int corePoolSize = 5;
-    private int maxPoolSize = 10;
+    private int maxPoolSize = 8;
     private int queueCapacity = 5;
     private String namePrefix = "bookStore-ThreadPool-service- ";
 

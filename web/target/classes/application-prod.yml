@@ -58,9 +58,14 @@ spring:
      #消费端开启手动ack
     listener:
       simple:
+      #QOS服务质量，消费者一次只能接受一个消息，如果不ACK则不接收下一条消息
+        prefetch: 1
         acknowledge-mode: manual
-        concurrency: 5
-        max-concurrency: 10
+        #最小的消费者数量，消费端启动5个线程消费消息
+        concurrency: 3
+        #最大的消息者数量
+        max-concurrency: 5
+
 
 #      direct:
 #        acknowledge-mode: manual

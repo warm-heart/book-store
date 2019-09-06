@@ -46,8 +46,8 @@ public class MQService {
             System.out.println("【MQService接收消息转化为实体类】" + role);
             System.out.println("【receiveTopic1监听到消息】" + message);
             System.out.println("【消息Id是】" + message.getMessageProperties().getMessageId());
-            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
 
+            channel.basicReject(message.getMessageProperties().getDeliveryTag(), false  );
 
             //System.out.println("消息Id是：" + message.getHeaders().get(AmqpHeaders.MESSAGE_ID));
             // channel.basicAck((Long) message.getHeaders().get(AmqpHeaders.DELIVERY_TAG), false);

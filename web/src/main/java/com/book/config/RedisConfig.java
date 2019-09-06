@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
+import org.springframework.data.redis.connection.RedisPassword;
+import org.springframework.data.redis.connection.RedisSentinelConfiguration;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -87,24 +89,34 @@ public class RedisConfig extends CachingConfigurerSupport {
         jedisPoolConfig.setTestOnBorrow(testOnBorrow);
         // 在空闲时检查有效性, 默认false
         jedisPoolConfig.setTestWhileIdle(testWhileIdle);
-        
+
         return jedisPoolConfig;
     }
 
 
     @Bean
     public JedisConnectionFactory jedisConnectionFactory(JedisPoolConfig jedisPoolConfig) {
-        JedisConnectionFactory JedisConnectionFactory = new JedisConnectionFactory(jedisPoolConfig);
 
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
         redisStandaloneConfiguration.setHostName("127.0.0.1");
         redisStandaloneConfiguration.setPort(6379);
-        redisStandaloneConfiguration.setDatabase(1);
-        //redisStandaloneConfiguration.setPassword(RedisPassword.of(password));
+      //  redisStandaloneConfiguration.setDatabase(1);
+        redisStandaloneConfiguration.setPassword(RedisPassword.none());
 
-        JedisClientConfiguration.JedisClientConfigurationBuilder jedisClientConfiguration = JedisClientConfiguration.builder();
-        jedisClientConfiguration.connectTimeout(Duration.ofMillis(1800));//  connection timeout
-        return JedisConnectionFactory;
+
+        JedisClientConfiguration jedisClientConfiguration = JedisClientConfiguration.builder().usePooling().
+                poolConfig(jedisPoolConfig).and().
+                readTimeout(Duration.ofMillis(1800))
+            .build();
+
+        //哨兵
+//        RedisSentinelConfiguration sentinelConfiguration = new RedisSentinelConfiguration();
+//        JedisConnectionFactory jedisConnectionFactory =
+//                new JedisConnectionFactory(sentinelConfiguration,jedisClientConfiguration);
+//        return new JedisConnectionFactory(sentinelConfiguration,jedisClientConfiguration);
+
+        return new JedisConnectionFactory(redisStandaloneConfiguration, jedisClientConfiguration);
+
     }
 
     @Bean//(name = "redisTemplate")

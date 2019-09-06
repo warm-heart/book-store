@@ -14,6 +14,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.amqp.core.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author wangqianlong
  * @create 2019-08-09 17:43
@@ -71,14 +74,32 @@ public class RabbitMqConfig {
         return new Queue(MqConsts.BOOK_ORDER_QUEUE);
     }
 
-    @Bean
-    public Queue directQueue2() {
-        return new Queue(MqConsts.DIRECT_QUEUE2);
-    }
 
     @Bean
     public Queue EsAddBookQueue() {
         return new Queue(MqConsts.ES_ADD_BOOK_QUEUE);
+    }
+
+    @Bean
+    public Queue directQueue2() {
+       // return new Queue(MqConsts.DIRECT_QUEUE2);
+        //给此队列做死信队列配置  ，死信队列也可以用来做延时队列
+        Map<String, Object> map = new HashMap(4);
+        map.put("x-dead-letter-exchange", MqConsts.DEAD_DIRECT_EXCHANGE);
+        map.put("x-dead-letter-routing-key", MqConsts.DEAD_ROUTING_KEY);
+        return QueueBuilder.durable(MqConsts.DIRECT_QUEUE2).withArguments(map).build();
+    }
+
+    //死信队列
+    @Bean
+    public Queue myDeadQueue() {
+        return new Queue(MqConsts.DEAD_QUEUE);
+    }
+
+    //死信交换机
+    @Bean
+    public DirectExchange myDeadExchange() {
+        return new DirectExchange(MqConsts.DEAD_DIRECT_EXCHANGE);
     }
 
     @Bean
@@ -109,6 +130,17 @@ public class RabbitMqConfig {
     @Bean
     public Binding EsAddBookQueueBinding() {
         return BindingBuilder.bind(EsAddBookQueue()).to(directExchange()).with(MqConsts.ES_ADD_BOOK_ROUTING_KEY);
+    }
+
+
+    /**
+     * 死信队列绑定
+     *
+     * @return
+     */
+    @Bean
+    public Binding MyDeadQueueBinding() {
+        return BindingBuilder.bind(myDeadQueue()).to(myDeadExchange()).with(MqConsts.DEAD_ROUTING_KEY);
     }
 
 

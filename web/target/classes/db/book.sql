@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
 `role_id` int NOT NULL AUTO_INCREMENT,
 `user_id` varchar (64) NOT NULL comment '用户id',
-`role_description` varchar(64) NOT NULL comment '角色描述',
+`role_name` varchar(64) NOT NULL comment '角色描述',
 
 `create_time` timestamp NOT NULL default current_timestamp comment '创建时间',
 `update_time` timestamp NOT NULL default current_timestamp on update current_timestamp comment '更新时间',
