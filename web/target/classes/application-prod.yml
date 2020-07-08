@@ -66,17 +66,27 @@ spring:
         #最大的消息者数量
         max-concurrency: 5
 
+      #      direct:
+      #        acknowledge-mode: manual
 
-#      direct:
-#        acknowledge-mode: manual
+             #消息重试ack 重试两次
+      #    listener:
+      #      simple:
+      #        retry:
+      #          enabled: true
+      #          max-attempts: 2
 
-     #消息重试ack 重试两次
-#    listener:
-#      simple:
-#        retry:
-#          enabled: true
-#          max-attempts: 2
-
+#
+#  kafka:
+#    bootstrap-servers: localhost:9092
+#    producer:
+#      retries: 1
+#      batch-size: 16384
+#      buffer-memory: 33554432
+#    consumer:
+#      group-id: test
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
 
 
@@ -112,6 +122,22 @@ pagehelper:
   helper-dialect: mysql
   reasonable: true
   support-methods-arguments: true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

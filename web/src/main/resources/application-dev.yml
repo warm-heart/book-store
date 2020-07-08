@@ -27,6 +27,7 @@ spring:
         reset-enable: true
         login-username: admin
         login-password: admin
+
 #前后端分离配置时间
   jackson:
     time-zone: GMT+8
@@ -45,7 +46,7 @@ mybatis:
   mapper-locations: classpath:/mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
-  type-aliases-package: com.example.redis.entity
+  type-aliases-package: com.book.entity
 
 #redis配置
 redis:

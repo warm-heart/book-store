@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-
     <artifactId>web</artifactId>
 
     <dependencies>
@@ -32,8 +31,6 @@
                     <!--此处为自己的启动类-->
                     <mainClass>com.book.StartApplication</mainClass>
                 </configuration>
-
-
 
             </plugin>
         </plugins>

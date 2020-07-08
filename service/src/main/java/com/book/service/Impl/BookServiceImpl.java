@@ -1,7 +1,7 @@
 package com.book.service.Impl;
 
 
-import com.book.MQ.EsMqService;
+import com.book.mqservice.EsMqService;
 import com.book.VO.BookVo;
 import com.book.dao.BookCategoryDao;
 import com.book.dao.BookDao;

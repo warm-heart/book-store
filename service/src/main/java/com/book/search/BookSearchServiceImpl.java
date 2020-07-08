@@ -125,9 +125,11 @@ public class BookSearchServiceImpl implements BookSearchService {
         sourceBuilder.query(boolBuilder);
         //加入排序
         sourceBuilder.sort(fieldSortBuilder);
-        //页码
+
+        //分页参数前端传 这里没做特此说明   此方式深度搜索很耗时 建议深分页scroll
+        //每页的起始索引 from参数是偏移量 比如每页100   第二页100-200 from 为100，size为100
         sourceBuilder.from(0);
-        // 获取记录数，默认10
+        //每页的数量  获取记录数，默认10
         sourceBuilder.size(200);
 
 
@@ -140,15 +142,22 @@ public class BookSearchServiceImpl implements BookSearchService {
         searchRequest.types(EsConsts.TYPE);
 
         searchRequest.source(sourceBuilder);
-        SearchResponse response = null;
+        SearchResponse response;
         try {
             response = client.search(searchRequest, RequestOptions.DEFAULT);
+            RestStatus status = response.status();
+            if (status!=RestStatus.OK){
+                log.warn("搜索错误{}",status.getStatus());
+                return null;
+            }
         } catch (IOException e) {
             log.error(e.getMessage());
             return null;
         }
         SearchHits hits = response.getHits();
+
         //得到总数
+        long total = hits.getTotalHits();
         SearchHit[] searchHits = hits.getHits();
         List<String> bookIndexTemplates = new ArrayList<>(100);
         for (SearchHit hit : searchHits) {

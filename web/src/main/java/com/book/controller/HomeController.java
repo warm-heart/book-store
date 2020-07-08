@@ -1,22 +1,21 @@
 package com.book.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.book.MQ.MQService;
 import com.book.VO.ApiResponse;
-import com.book.entity.Role;
-import com.book.entity.User;
 import com.book.enums.ResultEnum;
 import com.book.service.ISmsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Collections;
 
 /**
  * @author wangqianlong
@@ -29,9 +28,9 @@ public class HomeController {
     @Autowired
     private ISmsService smsService;
 
-    @GetMapping(value = "sms/code")
+    @GetMapping(value = "sms/code",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
-    public ApiResponse getSmsCode(String phone) {
+    public ApiResponse getSmsCode(String phone, HttpServletRequest request, HttpServletResponse response) {
         smsService.sendSms(phone);
         return ApiResponse.success("", ResultEnum.SUCCESS);
     }

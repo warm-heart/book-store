@@ -8,10 +8,13 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.script.RedisScript;
 
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -23,6 +26,26 @@ public class RedisDaoTest extends StartApplicationTests {
 
     @Autowired
     private RedisTemplate redisTemplate;
+
+
+    /**
+     * 原子计数器
+     */
+    @Test
+    public void inc() {
+
+//        redisTemplate.opsForValue().set("inc", 1L);
+        //自增
+       // Long inc = redisTemplate.boundValueOps("inc").increment();
+
+        //递减
+        Long dec = redisTemplate.boundValueOps("inc").decrement();
+        log.info("自减过后的值{}",dec);
+        System.out.println(dec);
+       // System.out.println(inc);
+
+
+    }
 
     /**
      * 操作String
@@ -37,8 +60,6 @@ public class RedisDaoTest extends StartApplicationTests {
 //        redisTemplate.opsForValue().set("b", user);
 //        //redisTemplate.opsForValue().set("testt", "test",180,TimeUnit.SECONDS);
 //        log.info("取出数据的数据为 {}", redisTemplate.opsForValue().get("a"));
-
-
 
     }
 
@@ -78,7 +99,6 @@ public class RedisDaoTest extends StartApplicationTests {
         redisTemplate.opsForList().rightPush("list1", "第三条数据");
 
         System.out.println(redisTemplate.opsForList().leftPop("list1"));
-
 
     }
 
@@ -121,8 +141,8 @@ public class RedisDaoTest extends StartApplicationTests {
 
         System.out.println(redisTemplate.opsForZSet().reverseRange("key", 1, 100));
 
-
     }
+    
 
 
 }

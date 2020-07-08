@@ -1,13 +1,11 @@
 package com.book.dao;
 
-import com.alibaba.fastjson.JSON;
-import com.book.MQ.EsMqService;
-import com.book.MQ.MQService;
+import com.book.mqservice.EsMqService;
+import com.book.mqservice.MQService;
 
 
 import com.book.constant.MqConsts;
 import com.book.entity.Role;
-import com.book.entity.User;
 import com.book.utils.JsonUtil;
 import org.junit.Test;
 import org.springframework.amqp.core.Message;

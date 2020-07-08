@@ -16,12 +16,12 @@ import java.util.List;
 @Mapper
 @Repository
 public interface BookDao {
-    /**
-     * 根据id批量查询
-     * @param bookIds
-     * @return
-     */
-    public List<BookInfo> selectByIds(@Param("bookIds") List<String> bookIds);
+        /**
+         * 根据id批量查询
+         * @param bookIds
+         * @return
+         */
+        public List<BookInfo> selectByIds(@Param("bookIds") List<String> bookIds);
 
 
     public List<BookInfo> findAllBookInfo();

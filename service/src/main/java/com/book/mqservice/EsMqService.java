@@ -1,4 +1,4 @@
-package com.book.MQ;
+package com.book.mqservice;
 
 
 import com.book.constant.MqConsts;

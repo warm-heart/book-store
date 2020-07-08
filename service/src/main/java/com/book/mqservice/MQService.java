@@ -1,9 +1,8 @@
-package com.book.MQ;
+package com.book.mqservice;
 
 
 import com.book.constant.MqConsts;
 import com.book.entity.Role;
-import com.book.entity.User;
 
 import com.book.utils.JsonUtil;
 
@@ -11,7 +10,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.rabbitmq.client.Channel;
 
 import org.springframework.amqp.core.Message;
-import org.springframework.amqp.support.AmqpHeaders;
 
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -20,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * @author wangqianlong
@@ -47,7 +44,7 @@ public class MQService {
             System.out.println("【receiveTopic1监听到消息】" + message);
             System.out.println("【消息Id是】" + message.getMessageProperties().getMessageId());
 
-            channel.basicReject(message.getMessageProperties().getDeliveryTag(), false  );
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false  );
 
             //System.out.println("消息Id是：" + message.getHeaders().get(AmqpHeaders.MESSAGE_ID));
             // channel.basicAck((Long) message.getHeaders().get(AmqpHeaders.DELIVERY_TAG), false);
