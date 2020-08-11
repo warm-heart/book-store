@@ -13,19 +13,20 @@ import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
-import org.elasticsearch.action.search.SearchRequest;
-import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.search.*;
 import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.text.Text;
+import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.RangeQueryBuilder;
 
 import org.elasticsearch.rest.RestStatus;
+import org.elasticsearch.search.Scroll;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 
@@ -50,6 +51,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CyclicBarrier;
 
 
 /**
@@ -147,6 +149,10 @@ public class ESTest extends StartApplicationTests {
 
 
         //可以多个条件一起相当于数据库中的 must:and ;should:OR
+
+        //BOOK_DESCRIPTION里必须有小说关键字
+        // CATEGORY_NAME古典
+        //其实must 和 should 不应该一起用
         boolBuilder.must(QueryBuilders.termQuery(EsConsts.BOOK_DESCRIPTION, "小说"));
         boolBuilder.should(QueryBuilders.termQuery(EsConsts.CATEGORY_NAME, "古典"));
 
@@ -227,5 +233,89 @@ public class ESTest extends StartApplicationTests {
         }
         //bookIndexTemplates.forEach(e -> System.out.println(e));
 
+    }
+
+
+    //深分页
+    @Test
+    public void deepPage() throws IOException, ParseException {
+
+
+        //该scroll参数（传递到search请求和每个scroll 请求）告诉Elasticsearch应该保持多长时间的搜索上下文活着。
+        // 它的值（例如1m，参见“ 时间单位”）不需要足够长的时间来处理所有数据，而只需要足够长的时间来处理前一批结果即可。
+        // 每个scroll请求（带有scroll参数）都设置一个新的到期时间。如果scroll没有在scroll 参数中传递请求，
+        // 那么搜索上下文将作为该 scroll 请求的一部分被释放。
+
+        //scroll超过超时时间后，搜索上下文将自动删除。但是，如上一节所述，保持滚动打开是有代价的，
+        // 因此，一旦不再使用clear-scrollAPI 使用滚动，则应明确清除滚动 ：
+
+        //如果scroll为空 则认为是第一次查询，如果不为空则直接scroll查询
+        Scroll scroll =new Scroll(TimeValue.timeValueMinutes(2));
+        //构建查询条件
+        BoolQueryBuilder boolBuilder = QueryBuilders.boolQuery();
+
+        //可以多个条件一起相当于数据库中的 must:and ;should:OR
+
+
+        boolBuilder.should(QueryBuilders.termQuery(EsConsts.BOOK_DESCRIPTION, "小说"));
+        boolBuilder.should(QueryBuilders.termQuery(EsConsts.CATEGORY_NAME, "古典"));
+
+        //构建SearchSourceBuilder
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.query(boolBuilder);
+
+        //设定每次返回多少条数据
+        sourceBuilder.size(1);
+
+        //构建SearchRequest
+        SearchRequest searchRequest = new SearchRequest(EsConsts.INDEX_NAME);
+        searchRequest.types(EsConsts.TYPE);
+        searchRequest.source(sourceBuilder);
+        //分页
+        searchRequest.scroll(scroll);
+
+        SearchResponse response = client.search(searchRequest, RequestOptions.DEFAULT);
+
+        String scrollId = response.getScrollId();
+
+        SearchHits hits = response.getHits();
+        SearchHit[] searchHits = hits.getHits();
+        for (SearchHit hit : searchHits) {
+            System.out.println(hit.getSourceAsString());
+        }
+
+        //遍历搜索命中的数据，直到没有数据
+        while (searchHits != null && searchHits.length > 0) {
+
+            SearchScrollRequest scrollRequest = new SearchScrollRequest(scrollId);
+            //每次重新设置过期时间
+            scrollRequest.scroll(TimeValue.timeValueMillis(1));
+
+            scrollRequest.scroll(scroll);
+            try {
+                response = client.scroll(scrollRequest, RequestOptions.DEFAULT);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            scrollId = response.getScrollId();
+            searchHits = response.getHits().getHits();
+            if (searchHits != null && searchHits.length > 0) {
+                System.out.println("-----下一页-----");
+                for (SearchHit searchHit : searchHits) {
+                    System.out.println(searchHit.getSourceAsString());
+                }
+            }
+        }
+        //清除滚屏
+        ClearScrollRequest clearScrollRequest = new ClearScrollRequest();
+        clearScrollRequest.addScrollId(scrollId);//也可以选择setScrollIds()将多个scrollId一起使用
+        ClearScrollResponse clearScrollResponse = null;
+        try {
+            clearScrollResponse = client.clearScroll(clearScrollRequest,RequestOptions.DEFAULT);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        boolean succeeded = clearScrollResponse.isSucceeded();
+        System.out.println("succeeded:" + succeeded);
     }
 }
