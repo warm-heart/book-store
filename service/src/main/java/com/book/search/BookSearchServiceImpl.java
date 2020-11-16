@@ -106,6 +106,7 @@ public class BookSearchServiceImpl implements BookSearchService {
         BoolQueryBuilder boolBuilder = QueryBuilders.boolQuery();
 
         //可以多个条件一起相当于数据库中的 OR
+        // matchQuery会对查询参数再次分词，termQuery不会，
         boolBuilder.should(QueryBuilders.termQuery(EsConsts.BOOK_DESCRIPTION, queryParam));
         boolBuilder.should(QueryBuilders.matchQuery(EsConsts.CATEGORY_NAME, queryParam));
 
