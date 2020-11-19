@@ -169,6 +169,51 @@ public class BookSearchServiceImpl implements BookSearchService {
         }
         return bookIndexTemplates;
     }
+    //聚合操作
+      public Map<String, Long> aggregation() throws IOException {
+
+        SearchRequest searchRequest = new SearchRequest(EsConstants.POS_BILL_ITEM_INDEX_NAME);
+
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+
+
+        // 根据产品类别id分组，对每个分组下的销售量进行sum求个
+
+        // 这一步是对itemClassId进行聚合
+        // term 后面跟的是别名，field是es中的索引字段
+        TermsAggregationBuilder termsAggregationBuilder = AggregationBuilders.terms("name")
+                .field("itemName");
+
+        //设置多少个分组
+        termsAggregationBuilder.size(5);
+
+        //对分组下的 itemQty（销售量） 求和操作  //这里是二级求和
+        termsAggregationBuilder.subAggregation(AggregationBuilders.sum("sum").field("itemQty"));
+
+        searchSourceBuilder.aggregation(termsAggregationBuilder);
+
+
+        searchRequest.source(searchSourceBuilder);
+
+        SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
+
+        Map<String, Long> map = new LinkedHashMap<>();
+
+        Aggregations aggregations = searchResponse.getAggregations();
+
+        ParsedStringTerms terms = (ParsedStringTerms) aggregations.getAsMap().get("name");
+        List<? extends Terms.Bucket> buckets = terms.getBuckets();
+        for (Terms.Bucket bucket : buckets) {
+            String keyAsString = bucket.getKeyAsString();
+            Long count = bucket.getDocCount();
+            //对应解析二级求和
+            ParsedSum parsedSum = bucket.getAggregations().get("sum");
+            //该分组下的销售量
+            Double sum = parsedSum.getValue();
+            map.put(keyAsString, count);
+        }
+        return map;
+    }
 }
 
 
